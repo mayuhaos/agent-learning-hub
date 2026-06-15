@@ -1,10 +1,62 @@
+<div align="center">
+
 # Agent Learning Hub
 
-这是我的 Agent 学习代码仓库，会按照 Datawhale 的 [Agent Learning Hub](https://datawhalechina.github.io/Agent-Learning-Hub/) 路线持续更新。
+从零开始实践 Agent 开发，把每一节学习内容沉淀成可运行代码。
 
-每讲一节，如果有代码，我都会把对应示例放到这里。目标不是只做笔记，而是把每个知识点变成一个能运行、能复盘、能继续扩展的小项目。
+<p>
+  <a href="https://github.com/mayuhaos/agent-learning-hub/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
+  </a>
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python">
+  </a>
+  <a href="https://datawhalechina.github.io/Agent-Learning-Hub/">
+    <img src="https://img.shields.io/badge/route-Datawhale%20Agent%20Learning%20Hub-orange.svg" alt="Learning Route">
+  </a>
+  <a href="https://www.bilibili.com/video/BV1ymjN6YEz8">
+    <img src="https://img.shields.io/badge/video-Bilibili-00A1D6.svg" alt="Bilibili">
+  </a>
+  <a href="https://yuhao.bbroot.com">
+    <img src="https://img.shields.io/badge/blog-yuhao.bbroot.com-black.svg" alt="Blog">
+  </a>
+</p>
 
-我的个人博客：[yuhao.bbroot.com](https://yuhao.bbroot.com)
+<p>
+  <a href="#学习路线">学习路线</a> ·
+  <a href="#内容索引">内容索引</a> ·
+  <a href="#目录约定">目录约定</a> ·
+  <a href="#star-history">Star History</a>
+</p>
+
+</div>
+
+---
+
+<table>
+  <tr>
+    <td width="50%">
+      <strong>学习路线</strong><br>
+      跟随 Datawhale 的 <a href="https://datawhalechina.github.io/Agent-Learning-Hub/">Agent Learning Hub</a> 持续推进。
+    </td>
+    <td width="50%">
+      <strong>更新方式</strong><br>
+      每讲一节，如果有代码，就把对应示例整理到这个仓库。
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <strong>项目目标</strong><br>
+      不只做笔记，而是把知识点变成能运行、能复盘、能继续扩展的小项目。
+    </td>
+    <td width="50%">
+      <strong>个人博客</strong><br>
+      更多文章和学习记录会同步到 <a href="https://yuhao.bbroot.com">yuhao.bbroot.com</a>。
+    </td>
+  </tr>
+</table>
+
+---
 
 ## 学习路线
 
@@ -13,7 +65,7 @@
 | 阶段 | 主题 | 仓库进度 | 视频地址 |
 | --- | --- | --- | --- |
 | Stage 0 | 理解 Agent 是什么 | 已完成 | [Bilibili](https://www.bilibili.com/video/BV1VwJn6wEsi) |
-| Stage 1 | 构建最小 Agent Loop | 进行中 | 待更新 |
+| Stage 1 | 构建最小 Agent Loop | 进行中 | [Bilibili](https://www.bilibili.com/video/BV1ymjN6YEz8) |
 | Stage 2 | 学习工具调用、RAG 与记忆 | 待更新 | 待更新 |
 | Stage 3 | 深入研究一个现代 Agent Harness | 待更新 | 待更新 |
 | Stage 4 | 多 Agent 是协调问题，不是魔法 | 待更新 | 待更新 |
@@ -22,11 +74,12 @@
 | Stage 7 | 评测、可观测性与安全 | 待更新 | 待更新 |
 | Stage 8 | 交付一个真正的 Agent | 待更新 | 待更新 |
 
-## 当前内容
+## 内容索引
 
 ```text
 agent-learning-hub/
 └── stage1/
+    ├── README.md
     └── learn1-llm-chat/
         ├── main.py
         ├── requirements.txt
@@ -34,61 +87,7 @@ agent-learning-hub/
         └── README.md
 ```
 
-### Stage 1 / Learn 1
-
-主题：用一个 LLM API 完成普通多轮对话。
-
-这一节会实现一个命令行聊天程序：
-
-1. 读取用户输入
-2. 调用 LLM API
-3. 打印模型回复
-4. 保存历史消息
-5. 在下一轮请求中带上上下文
-
-代码位置：[stage1/learn1-llm-chat](./stage1/learn1-llm-chat)
-
-## 快速开始
-
-进入当前课程目录：
-
-```bash
-cd stage1/learn1-llm-chat
-```
-
-安装依赖：
-
-```bash
-py -3 -m pip install -r requirements.txt
-```
-
-如果你的系统已经配置好了 `pip`，也可以使用：
-
-```bash
-pip install -r requirements.txt
-```
-
-创建 `.env` 文件：
-
-```bash
-OPENAI_API_KEY=你的 API Key
-OPENAI_BASE_URL=https://你的中转站地址/v1
-OPENAI_MODEL=你的模型名
-```
-
-如果使用官方 OpenAI API，可以不写 `OPENAI_BASE_URL`。
-
-运行：
-
-```bash
-py -3 main.py
-```
-
-或者：
-
-```bash
-python main.py
-```
+具体运行方式见每个 `learn` 目录下的 `README.md`。
 
 ## 目录约定
 
@@ -123,3 +122,11 @@ stage2/
 - 学习路线：[Datawhale Agent Learning Hub](https://datawhalechina.github.io/Agent-Learning-Hub/)
 - 我的博客：[yuhao.bbroot.com](https://yuhao.bbroot.com)
 - OpenAI API 文档：[OpenAI Developers](https://developers.openai.com/api/docs)
+
+## Star History
+
+<div align="center">
+  <a href="https://www.star-history.com/#mayuhaos/agent-learning-hub&Date">
+    <img src="https://api.star-history.com/svg?repos=mayuhaos/agent-learning-hub&type=Date" alt="Star History Chart">
+  </a>
+</div>
