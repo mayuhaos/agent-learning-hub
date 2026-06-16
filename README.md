@@ -85,9 +85,13 @@ agent-learning-hub/
     ├── learn1-llm-chat/
     │   ├── main.py
     │   └── README.md
-    └── learn2-structured-json/
+    ├── learn2-structured-json/
+    │   ├── main.py
+    │   ├── prompt_json.py
+    │   └── README.md
+    └── learn3-tool-function/
         ├── main.py
-        ├── prompt_json.py
+        ├── sample_note.txt
         └── README.md
 ```
 
