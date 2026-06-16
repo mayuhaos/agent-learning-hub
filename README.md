@@ -80,10 +80,14 @@
 agent-learning-hub/
 └── stage1/
     ├── README.md
-    └── learn1-llm-chat/
+    ├── requirements.txt
+    ├── .env.example
+    ├── learn1-llm-chat/
+    │   ├── main.py
+    │   └── README.md
+    └── learn2-structured-json/
         ├── main.py
-        ├── requirements.txt
-        ├── .env.example
+        ├── prompt_json.py
         └── README.md
 ```
 
@@ -95,10 +99,14 @@ agent-learning-hub/
 
 ```text
 stage1/
+  requirements.txt
+  .env.example
   learn1-llm-chat/
   learn2-structured-json/
   learn3-tool-function/
 stage2/
+  requirements.txt
+  .env.example
   learn1-tool-calling/
   learn2-rag/
   learn3-memory/
@@ -108,8 +116,9 @@ stage2/
 
 1. `stageN` 表示学习阶段
 2. `learnN-topic` 表示该阶段的第 N 节
-3. 每一节尽量包含独立的 `README.md`
-4. 有代码的章节尽量保证可以单独运行
+3. 每个 `stageN` 目录维护本阶段共享的 `.env.example` 和 `requirements.txt`
+4. 每一节尽量包含独立的 `README.md`
+5. 有代码的章节尽量保证可以单独运行
 
 ## 安全提醒
 

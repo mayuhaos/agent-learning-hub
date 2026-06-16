@@ -10,6 +10,8 @@
 
 ## 准备环境
 
+下面的命令都在 `stage1` 目录下执行。
+
 安装依赖：
 
 ```bash
@@ -37,13 +39,13 @@ OPENAI_MODEL=你的模型名
 ## 运行
 
 ```bash
-python main.py
+python learn1-llm-chat/main.py
 ```
 
 Windows 如果没有配置 `python` 命令，可以使用：
 
 ```bash
-py -3 main.py
+py -3 learn1-llm-chat/main.py
 ```
 
 退出聊天：

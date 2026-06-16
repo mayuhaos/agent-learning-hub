@@ -1,10 +1,12 @@
 import os
+from pathlib import Path
 
 from openai import OpenAI
 from dotenv import load_dotenv
 
 
-load_dotenv()
+stage_dir = Path(__file__).resolve().parents[1]
+load_dotenv(stage_dir / ".env")
 
 base_url = os.getenv("OPENAI_BASE_URL")
 model = os.getenv("OPENAI_MODEL", "gpt-5.5")
