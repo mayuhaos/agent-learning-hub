@@ -3,6 +3,8 @@ import operator
 from pathlib import Path
 
 
+# 一个非常小的内置资料库，用来演示 search 工具。
+# 真实项目里 search 可能连接搜索引擎、数据库、向量库或文档系统。
 KNOWLEDGE_BASE = [
     {
         "title": "Agent",
@@ -22,6 +24,9 @@ KNOWLEDGE_BASE = [
     },
 ]
 
+# ast 解析出来的运算符节点不能直接执行。
+# 这里把“允许的 AST 运算符类型”映射到 Python 的安全函数。
+# 没放进这个表的运算符，就不会被 calculator 执行。
 ALLOWED_OPERATORS = {
     ast.Add: operator.add,
     ast.Sub: operator.sub,
@@ -37,16 +42,20 @@ ALLOWED_OPERATORS = {
 
 def search(query: str) -> str:
     """Search a tiny built-in knowledge base."""
+    # 工具函数的输入通常先做清洗。
+    # strip 去掉首尾空格，lower 让搜索不区分大小写。
     keyword = query.strip().lower()
     if not keyword:
         return "搜索关键词不能为空。"
 
+    # 遍历资料库，把标题和内容拼起来做简单关键词匹配。
     matches = []
     for item in KNOWLEDGE_BASE:
         text = f"{item['title']} {item['content']}".lower()
         if keyword in text:
             matches.append(f"- {item['title']}: {item['content']}")
 
+    # 工具失败时也要返回清晰信息，而不是直接崩溃。
     if not matches:
         return f"没有找到和「{query}」相关的资料。"
 
@@ -56,26 +65,33 @@ def search(query: str) -> str:
 def calculator(expression: str) -> str:
     """Calculate a simple math expression safely."""
     try:
+        # 不使用 eval(expression)，因为 eval 会执行任意 Python 代码，风险很高。
+        # ast.parse 只把输入解析成语法树，后面由我们自己决定哪些节点允许执行。
         tree = ast.parse(expression, mode="eval")
         result = _eval_math_node(tree.body)
     except Exception as exc:
+        # 对学习示例来说，返回错误文本比抛出异常更容易观察。
         return f"计算失败：{exc}"
 
     return str(result)
 
 
 def _eval_math_node(node: ast.AST) -> float:
+    # 数字常量是递归计算的最小单位，例如 1、2.5。
     if isinstance(node, ast.Constant) and isinstance(node.value, int | float):
         return node.value
 
+    # 二元运算：例如 1 + 2、3 * 4。
     if isinstance(node, ast.BinOp):
         operator_type = type(node.op)
         if operator_type not in ALLOWED_OPERATORS:
             raise ValueError("只支持 +、-、*、/、//、%、** 这些运算符。")
+        # 先递归计算左边和右边，再把对应运算符函数应用上去。
         left = _eval_math_node(node.left)
         right = _eval_math_node(node.right)
         return ALLOWED_OPERATORS[operator_type](left, right)
 
+    # 一元运算：例如 -1、+2。
     if isinstance(node, ast.UnaryOp):
         operator_type = type(node.op)
         if operator_type not in ALLOWED_OPERATORS:
@@ -88,9 +104,13 @@ def _eval_math_node(node: ast.AST) -> float:
 
 def read_file(path: str) -> str:
     """Read a file from this lesson directory."""
+    # 只允许读取本节目录下的文件。
+    # 这样既能演示 read_file 工具，又不会误读用户电脑上的其他文件。
     lesson_dir = Path(__file__).resolve().parent
     target_path = (lesson_dir / path).resolve()
 
+    # resolve 后再判断路径是否仍在 lesson_dir 里面。
+    # 这可以拦住 ../README.md 这类试图跳出目录的路径。
     if not target_path.is_relative_to(lesson_dir):
         return "读取失败：只能读取本节目录下的文件。"
 
@@ -100,10 +120,13 @@ def read_file(path: str) -> str:
     if not target_path.is_file():
         return f"读取失败：这不是一个文件：{path}"
 
+    # 明确使用 utf-8，避免中文示例文件在不同系统上出现编码问题。
     return target_path.read_text(encoding="utf-8")
 
 
 def print_menu() -> None:
+    # 命令行菜单只是为了让学习者手动选择工具。
+    # 真正的 Agent 里，这个选择动作会逐步交给模型完成。
     print("\n请选择一个工具：")
     print("1. search      查询内置资料")
     print("2. calculator  计算数学表达式")
@@ -119,10 +142,13 @@ def main() -> None:
         print_menu()
         choice = input("\nTool: ").strip().lower()
 
+        # 退出分支。
         if choice in {"0", "exit", "quit", "退出"}:
             print("Bye.")
             break
 
+        # 根据用户选择，收集对应参数，然后调用本地函数。
+        # 本节的重点是：工具函数本质上就是普通函数。
         if choice in {"1", "search"}:
             query = input("Query: ").strip()
             result = search(query)
