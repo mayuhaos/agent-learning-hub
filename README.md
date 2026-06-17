@@ -65,7 +65,7 @@
 | 阶段 | 主题 | 仓库进度 | 视频地址 |
 | --- | --- | --- | --- |
 | Stage 0 | 理解 Agent 是什么 | 已完成 | [Bilibili](https://www.bilibili.com/video/BV1VwJn6wEsi) |
-| Stage 1 | 构建最小 Agent Loop | 进行中 | [Bilibili](https://www.bilibili.com/video/BV1ymjN6YEz8) |
+| Stage 1 | 构建最小 Agent Loop | 已完成 | [Bilibili](https://www.bilibili.com/video/BV1ymjN6YEz8) |
 | Stage 2 | 学习工具调用、RAG 与记忆 | 待更新 | 待更新 |
 | Stage 3 | 深入研究一个现代 Agent Harness | 待更新 | 待更新 |
 | Stage 4 | 多 Agent 是协调问题，不是魔法 | 待更新 | 待更新 |
