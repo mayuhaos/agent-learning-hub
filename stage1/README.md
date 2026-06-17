@@ -29,12 +29,15 @@ py -3 -m pip install -r requirements.txt
 | Learn 1 | 用一个 LLM API 完成普通多轮对话 | 已完成 |
 | Learn 2 | 让模型输出结构化 JSON | 已完成 |
 | Learn 3 | 定义一个工具函数 | 已完成 |
-| Learn 4 | 解析模型的 tool call / function call | 待更新 |
-| Learn 5 | 执行工具并把结果喂回模型 | 待更新 |
-| Learn 6 | 给 agent loop 加最大步数、超时和错误处理 | 待更新 |
+| Learn 4 | 解析模型的 tool call / function call | 已完成 |
+| Learn 5 | 执行工具并把结果喂回模型 | 已完成 |
+| Learn 6 | 给 agent loop 加最大步数、超时和错误处理 | 已完成 |
 
 ## 当前代码
 
 - [learn1-llm-chat](./learn1-llm-chat)：一个命令行多轮聊天程序。
 - [learn2-structured-json](./learn2-structured-json)：一个把自然语言事件解析成结构化 JSON 的程序。
 - [learn3-tool-function](./learn3-tool-function)：一个定义并执行本地工具函数的程序。
+- [learn4-tool-call-parse](./learn4-tool-call-parse)：一个解析模型 tool/function call 的程序。
+- [learn5-execute-tool](./learn5-execute-tool)：一个执行工具并把工具结果回传模型的程序。
+- [learn6-agent-loop-controls](./learn6-agent-loop-controls)：一个带最大步数、超时和错误处理的最小 agent loop。

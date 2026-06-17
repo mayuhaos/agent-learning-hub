@@ -89,7 +89,18 @@ agent-learning-hub/
     │   ├── main.py
     │   ├── prompt_json.py
     │   └── README.md
-    └── learn3-tool-function/
+    ├── learn3-tool-function/
+    │   ├── main.py
+    │   ├── sample_note.txt
+    │   └── README.md
+    ├── learn4-tool-call-parse/
+    │   ├── main.py
+    │   └── README.md
+    ├── learn5-execute-tool/
+    │   ├── main.py
+    │   ├── sample_note.txt
+    │   └── README.md
+    └── learn6-agent-loop-controls/
         ├── main.py
         ├── sample_note.txt
         └── README.md
@@ -108,6 +119,9 @@ stage1/
   learn1-llm-chat/
   learn2-structured-json/
   learn3-tool-function/
+  learn4-tool-call-parse/
+  learn5-execute-tool/
+  learn6-agent-loop-controls/
 stage2/
   requirements.txt
   .env.example
