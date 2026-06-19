@@ -14,3 +14,4 @@ env/
 .idea/
 .vscode/
 *.log
+stage2/learn2-tool-registry/sample_data/

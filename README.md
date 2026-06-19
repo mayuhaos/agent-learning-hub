@@ -108,10 +108,15 @@ agent-learning-hub/
     ├── README.md
     ├── requirements.txt
     ├── .env.example
-    └── learn1-rag-qdrant-basic/
-        ├── docs/
-        │   ├── agent_notes.md
-        │   └── rag_notes.md
+    ├── learn1-rag-qdrant-basic/
+    │   ├── docs/
+    │   │   ├── agent_notes.md
+    │   │   └── rag_notes.md
+    │   ├── main.py
+    │   └── README.md
+    └── learn2-tool-registry/
+        ├── sample_files/
+        │   └── agent_tool_note.md
         ├── main.py
         └── README.md
 ```

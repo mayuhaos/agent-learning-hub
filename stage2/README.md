@@ -2,7 +2,7 @@
 
 这一阶段会继续沿着 Datawhale Agent Learning Hub 的路线推进：工具调用、RAG、记忆、失败处理和引用证据。
 
-当前先完成第一节：用真实的 BGE-M3 embedding 服务和 Qdrant 向量数据库实现一个最小 RAG 闭环。
+当前已经完成前两节：先用真实的 BGE-M3 embedding 服务和 Qdrant 向量数据库实现最小 RAG 闭环，再把搜索、数据库、文件、浏览器、代码执行统一接成工具。
 
 ## 环境配置
 
@@ -64,7 +64,7 @@ curl http://localhost:6333
 | 小节 | 主题 | 状态 |
 | --- | --- | --- |
 | Learn 1 | 会做检索增强生成：chunk、embed、retrieve、answer with citations | 已完成 |
-| Learn 2 | 会把搜索、数据库、文件、浏览器、代码执行接成工具 | 待更新 |
+| Learn 2 | 会把搜索、数据库、文件、浏览器、代码执行接成工具 | 已完成 |
 | Learn 3 | 会区分短期上下文、会话记忆、长期记忆 | 待更新 |
 | Learn 4 | 会处理工具失败、空结果、重复调用、幻觉引用 | 待更新 |
 | Learn 5 | 会让 agent 在回答里给出来源或证据 | 待更新 |
@@ -72,3 +72,4 @@ curl http://localhost:6333
 ## 当前代码
 
 - [learn1-rag-qdrant-basic](./learn1-rag-qdrant-basic)：一个用 BGE-M3 和 Qdrant 实现的最小 RAG 程序。
+- [learn2-tool-registry](./learn2-tool-registry)：把搜索、数据库、文件、网页读取和代码执行包装成统一工具。
