@@ -66,7 +66,7 @@
 | --- | --- | --- | --- |
 | Stage 0 | 理解 Agent 是什么 | 已完成 | [Bilibili](https://www.bilibili.com/video/BV1VwJn6wEsi) |
 | Stage 1 | 构建最小 Agent Loop | 已完成 | [Bilibili](https://www.bilibili.com/video/BV1ymjN6YEz8) |
-| Stage 2 | 学习工具调用、RAG 与记忆 | 待更新 | 待更新 |
+| Stage 2 | 学习工具调用、RAG 与记忆 | 更新中 | [Bilibili](https://www.bilibili.com/video/av116775815552541) |
 | Stage 3 | 深入研究一个现代 Agent Harness | 待更新 | 待更新 |
 | Stage 4 | 多 Agent 是协调问题，不是魔法 | 待更新 | 待更新 |
 | Stage 5 | 学习 Skills、协议与能力打包 | 待更新 | 待更新 |
@@ -78,31 +78,41 @@
 
 ```text
 agent-learning-hub/
-└── stage1/
+├── stage1/
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── .env.example
+│   ├── learn1-llm-chat/
+│   │   ├── main.py
+│   │   └── README.md
+│   ├── learn2-structured-json/
+│   │   ├── main.py
+│   │   ├── prompt_json.py
+│   │   └── README.md
+│   ├── learn3-tool-function/
+│   │   ├── main.py
+│   │   ├── sample_note.txt
+│   │   └── README.md
+│   ├── learn4-tool-call-parse/
+│   │   ├── main.py
+│   │   └── README.md
+│   ├── learn5-execute-tool/
+│   │   ├── main.py
+│   │   ├── sample_note.txt
+│   │   └── README.md
+│   └── learn6-agent-loop-controls/
+│       ├── main.py
+│       ├── sample_note.txt
+│       └── README.md
+└── stage2/
     ├── README.md
     ├── requirements.txt
     ├── .env.example
-    ├── learn1-llm-chat/
-    │   ├── main.py
-    │   └── README.md
-    ├── learn2-structured-json/
-    │   ├── main.py
-    │   ├── prompt_json.py
-    │   └── README.md
-    ├── learn3-tool-function/
-    │   ├── main.py
-    │   ├── sample_note.txt
-    │   └── README.md
-    ├── learn4-tool-call-parse/
-    │   ├── main.py
-    │   └── README.md
-    ├── learn5-execute-tool/
-    │   ├── main.py
-    │   ├── sample_note.txt
-    │   └── README.md
-    └── learn6-agent-loop-controls/
+    └── learn1-rag-qdrant-basic/
+        ├── docs/
+        │   ├── agent_notes.md
+        │   └── rag_notes.md
         ├── main.py
-        ├── sample_note.txt
         └── README.md
 ```
 
@@ -125,8 +135,8 @@ stage1/
 stage2/
   requirements.txt
   .env.example
-  learn1-tool-calling/
-  learn2-rag/
+  learn1-rag-qdrant-basic/
+  learn2-tool-registry/
   learn3-memory/
 ```
 
