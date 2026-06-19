@@ -2,7 +2,7 @@
 
 这一阶段会继续沿着 Datawhale Agent Learning Hub 的路线推进：工具调用、RAG、记忆、失败处理和引用证据。
 
-当前已经完成前两节：先用真实的 BGE-M3 embedding 服务和 Qdrant 向量数据库实现最小 RAG 闭环，再把搜索、数据库、文件、浏览器、代码执行统一接成工具。
+当前已经完成 Stage 2：先用真实的 BGE-M3 embedding 服务和 Qdrant 向量数据库实现最小 RAG 闭环，再把搜索、数据库、文件、浏览器、代码执行统一接成工具，最后补齐记忆、鲁棒工具处理和带证据回答。
 
 ## 环境配置
 
@@ -65,11 +65,14 @@ curl http://localhost:6333
 | --- | --- | --- |
 | Learn 1 | 会做检索增强生成：chunk、embed、retrieve、answer with citations | 已完成 |
 | Learn 2 | 会把搜索、数据库、文件、浏览器、代码执行接成工具 | 已完成 |
-| Learn 3 | 会区分短期上下文、会话记忆、长期记忆 | 待更新 |
-| Learn 4 | 会处理工具失败、空结果、重复调用、幻觉引用 | 待更新 |
-| Learn 5 | 会让 agent 在回答里给出来源或证据 | 待更新 |
+| Learn 3 | 会区分短期上下文、会话记忆、长期记忆 | 已完成 |
+| Learn 4 | 会处理工具失败、空结果、重复调用、幻觉引用 | 已完成 |
+| Learn 5 | 会让 agent 在回答里给出来源或证据 | 已完成 |
 
 ## 当前代码
 
 - [learn1-rag-qdrant-basic](./learn1-rag-qdrant-basic)：一个用 BGE-M3 和 Qdrant 实现的最小 RAG 程序。
 - [learn2-tool-registry](./learn2-tool-registry)：把搜索、数据库、文件、网页读取和代码执行包装成统一工具。
+- [learn3-memory-types](./learn3-memory-types)：用内存和 SQLite 对比短期上下文、会话记忆和长期记忆。
+- [learn4-tool-error-handling](./learn4-tool-error-handling)：演示工具失败、空结果、重复调用和幻觉引用的处理。
+- [learn5-research-assistant](./learn5-research-assistant)：把检索、总结和引用校验串成一个最小资料研究助手。

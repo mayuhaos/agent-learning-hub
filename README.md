@@ -114,9 +114,20 @@ agent-learning-hub/
     │   │   └── rag_notes.md
     │   ├── main.py
     │   └── README.md
-    └── learn2-tool-registry/
-        ├── sample_files/
-        │   └── agent_tool_note.md
+    ├── learn2-tool-registry/
+    │   ├── sample_files/
+    │   │   └── agent_tool_note.md
+    │   ├── main.py
+    │   └── README.md
+    ├── learn3-memory-types/
+    │   ├── main.py
+    │   └── README.md
+    ├── learn4-tool-error-handling/
+    │   ├── sample_files/
+    │   │   └── agent_note.md
+    │   ├── main.py
+    │   └── README.md
+    └── learn5-research-assistant/
         ├── main.py
         └── README.md
 ```
@@ -142,7 +153,9 @@ stage2/
   .env.example
   learn1-rag-qdrant-basic/
   learn2-tool-registry/
-  learn3-memory/
+  learn3-memory-types/
+  learn4-tool-error-handling/
+  learn5-research-assistant/
 ```
 
 命名规则：

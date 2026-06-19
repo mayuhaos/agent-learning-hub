@@ -15,3 +15,4 @@ env/
 .vscode/
 *.log
 stage2/learn2-tool-registry/sample_data/
+stage2/learn3-memory-types/runtime_data/
